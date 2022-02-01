@@ -264,7 +264,7 @@
 
         span {
             margin-left: 8px;
-            transition: margin-left .2s;
+            transition: margin-left 0.2s;
         }
     }
 
@@ -319,7 +319,7 @@
         display: inline-block;
         height: 1rem;
         width: 1rem;
-        margin-right: .7rem;
+        margin-right: 0.7rem;
 
         //Older browsers
         //background-image: url(../img/chevron-thin-right.svg);
@@ -344,13 +344,11 @@
     display: flex;
     align-items: center;
 
-
     &__count {
-        margin-right: auto;        
+        margin-right: auto;
     }
 
     &__friends {
-
     }
 
     &__photo {
@@ -380,11 +378,10 @@
         position: relative;
         overflow: hidden;
     }
-    &__user{
+    &__user {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
     }
     &__photo {
         height: 4.5rem;
@@ -413,12 +410,82 @@
     &::before {
         content: "\201C";
         position: absolute;
-        top: -.75rem;
+        top: -0.75rem;
         left: -1rem;
         font-size: 20rem;
         color: var(--color-Grey-light-2);
         font-family: sans-serif;
         line-height: 1;
         z-index: 1;
+    }
+}
+
+//CALL TO ACTION
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+//BTN
+
+.btn {
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+
+    }
+
+    &__visible {
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        height: 100%;
+        width: 100%;
+    }
+    &__invisible {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -100%;
+        padding: 2rem 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible{
+        transform: translateY(100%);
+
+    }
+    &:hover &__invisible{
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
     }
 }
